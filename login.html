@@ -1,0 +1,40 @@
+<!--I have the mainpage html as main.html here but may need to change it-->
+<!DOCTYPE html>
+<html lang = en>
+<head>
+    <title>TU Tunes</title>
+    <meta charset = 'utf-8'>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method = 'GET' name="loginForm" action="main.html" onsubmit='return checkInfo()'>
+        <fieldset>
+            <lable>Username: </lable> <input type="text" id="uname" required><br>
+            <lable>Password: </lable> <input type="password" id="password" required><br>
+            <a href="forgotPassword.html">Forgot Password?</a><br>
+            <input type="submit" name="submitLogin">
+        </fieldset>
+    </form>
+</body>
+
+<script>
+
+    function checkInfo(){
+        var uname = document.forms["loginForm"]["uname"].value;
+        var pword = document.forms["loginForm"]["password"].value;
+        if(checkUsername(uname) && checkPassword(pword)){
+            return true;
+        }
+        return false;
+    }
+
+    function checkUsername(uname){
+        //Check username against whatever database we use to see if it exists
+        return true;
+    }
+
+    function checkPassword(password){
+        //check password against db to see if its correct
+        return true;
+    }
+</script>

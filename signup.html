@@ -1,0 +1,55 @@
+<!--checkEmail and checkAvailability incomplete, will start when we understand database-->
+<!DOCTYPE html>
+<html lang = en>
+<head>
+    <title>TU Tunes</title>
+    <meta charset = 'utf-8'>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form method = 'GET' name="signupForm" action="main.html" onsubmit='return validateForm()'>
+        <fieldset>
+            <lable>Username: </lable> <input type="text" id="uname" required><br>
+            <lable>Email: </lable> <input type="email" id="email" required><br>
+            <lable>Password: </lable> <input type="password" id="password1" required><br>
+            <lable>Reenter Password: </lable><input type="password" id="password2" required><br>
+            <input type="submit" name="submitSignup">
+        </fieldset>
+    </form>
+</body>
+<script>
+    function validateForm(){
+        var uname = document.forms["signupForm"]["uname"].value;
+        var pword1 = document.forms["signupForm"]["password1"].value;
+        var pword2 = document.forms["signupForm"]["password2"].value;
+        var email = document.forms["signupForm"]["email"].value;
+        return(checkUsername(uname) && checkPasswords(pword1,pword2) && checkAvailability(uname) && checkEmail(email));
+    }
+
+    function checkUsername(uname){
+        var len = uname.length;
+        if(len > 20 || len < 6){
+            alert("Username must be between 6 and 20 characters.");
+            return false;
+        }
+        return true;
+    }
+    function checkAvailability(uname){
+        //check to see if username is already in database
+        return true;
+    }
+    function checkEmail(email){
+        //check to see if there is already the email is already associated with an account
+        return true;
+    }
+    function checkPasswords(password1,password2){
+
+        if(password1 != password2){
+            alert("Passwords must match");
+        }
+        return (password1==password2);
+    }
+    //function to check if username is taken
+    //function to validate the info
+    //function to store new username and password in database
+</script>
