@@ -15,6 +15,12 @@ const App = ()  => {
   return (
       <Profile />
       //<FirstPage />
+      //<About />
+      //<Main />
+      //<Profile /> 
+      //<SignIn />
+      //<SignUp>
+      //<Settings>
   );
 };
 
