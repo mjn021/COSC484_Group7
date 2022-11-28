@@ -24,9 +24,15 @@ code {
 
 .card {
   background-color: rgb(251, 248, 248);
-  color: #333;
+  color: rgb(34, 31, 31);
   border-radius: 15px;
   padding: 40px 50px;
   margin: 20px 0;
   position: relative;
+}
+.input {
+  align-items: center;
+}
+.input-group {
+  padding: 10px 0;
 }
