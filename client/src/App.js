@@ -1,12 +1,13 @@
-import LoginField from './components/LoginField';
+
 import LogInPage from './pages/LogInPage';
 import SignUpPage from './pages/SignUpPage';
 import MainPage from './pages/MainPage';
 import FriendsListPage from './pages/FriendsListPage';
 import ProfilePage from './pages/ProfilePage';
 import Header from './components/Header';
-import {BrowserRouter as Router, Route, Routes, NavLink} from 'react-router-dom'
-
+import SettingsPage from './pages/SettingsPage';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import SidebarPage from './pages/SidebarPage';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path = '/profile' element = {<ProfilePage />} />
         <Route path = '/friendslist' element = {<FriendsListPage />} />
         <Route path = '/Login' element = {<LogInPage />} />
+        <Route path = '/settings' element = {<SettingsPage/>}/>
+        <Route path = '/sidebar' element = {<SidebarPage/>}/>
       </Routes>
       </div>
     </Router> 
@@ -28,6 +31,3 @@ function App() {
 }
 
 export default App;
-/*
-
-    */

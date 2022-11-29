@@ -36,3 +36,35 @@ code {
 .input-group {
   padding: 10px 0;
 }
+
+.sidebar {
+  border-right: 1px solid;
+  flex: 0.25;
+  min-width: 250px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.sidebarOption:hover {
+  background-color: #e8f5fe;
+  color: var(--twitter-color);
+  transition: color 100ms ease-out;
+}
+.sidebarOption > .MuiSvgIcon-root {
+  padding: 20px;
+}
+.sidebarOption > h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.sidebarOption--active {
+  color:rgb(255, 187, 0);
+}

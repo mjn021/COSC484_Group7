@@ -3,6 +3,7 @@ function Header() {
     const headerStyles = {
         backgroundColor: 'gold',
         color:'black'}
+        
     return (
         <header style = {headerStyles}>
             <div className = "container">
