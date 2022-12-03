@@ -28,7 +28,12 @@ const userSchema = mongoose.Schema({
         required: false,
         default: ["No artist specified", "No artist specified", "No artist specified"]
     },
-    friends: {
+    followers: {
+        type: Array,
+        required: false,
+        default: []
+    },
+    following: {
         type: Array,
         required: false,
         default: []
