@@ -13,13 +13,16 @@ function ProfilePage(){
     const nav = useNavigate()
     if(curUser){
         return(
-            <div>
-                <h1>Profile Page</h1>
-                <UserInfo />
-                <Top3Artists />
-                <Top3Songs />
-                <PostList />
+           <div>
+                <h1>Profile Page</h1>         
+                <UserInfo user = {user}/>
+                <div class="feed">
+                <Top3Artists user = {user}/>
+                <Top3Songs user = {user}/>
+                </div>                       
+                <PostList user = {user}/>
             </div>
+
             )}
     else{
         <p>no one signed in</p>
