@@ -39,8 +39,8 @@ function LoginField(){
             <h1>Login</h1>
             <form onSubmit = {onS}>
                 <div className='input-group'>
-                    <label>Username: </label><input onChange = {getUsername} name = 'uname' type = 'text' required></input> <br></br>
-                    <label>Password: </label><input onChange = {getPassword} name = 'pw1' type = 'password' required></input><br></br>
+                    <label>Username: </label><input onChange = {getUsername} name = 'uname' type = 'text' placeholder="Username" class="loginUser" required></input> <br></br>
+                    <label>Password: </label><input onChange = {getPassword} name = 'pw1' type = 'password' placeholder="Password" class="loginPass" required></input><br></br>
                     <input type = 'submit'></input> <br></br>
                     <Link to='/signup'>Don't have an account? Sign up!</Link>
                 </div>
