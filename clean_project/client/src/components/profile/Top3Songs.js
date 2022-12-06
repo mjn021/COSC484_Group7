@@ -56,7 +56,7 @@ function Top3Songs(){
     }
     //Add edit functionaliy
     return(
-        <div>
+        <div class="Top3">
             <h3>Top 3 Songs {
                     <button onClick = {onEdit} className = 'edit'>
                         <FaEdit color = 'black' />
