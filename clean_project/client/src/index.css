@@ -81,3 +81,50 @@ code {
 .sidebarOption--active {
   color:rgb(255, 187, 0);
 }
+
+.menu{
+  width: 100%;
+background-color: rgb(255, 187, 0);
+}
+
+.menu .bar{
+  width: 20%;
+  float: left;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.menu .bar:hover {
+  background-color: rgb(255,215,1);
+}
+
+.sign{
+  margin-bottom: 20px ;
+}
+
+.name{
+  margin-bottom: 20px ;
+}
+
+.pass{
+  margin-bottom: 20px ;
+}
+
+.pass2{
+  margin-bottom: 20px ;
+}
+
+.signUpBody{
+  margin-top: 20px;
+  box-sizing: content-box;
+  width: 300px;
+  height: 100px;
+  padding: 70px;
+  padding-bottom: 200px;
+  border: 2px solid rgb(255, 187, 0);
+  margin-left: 350px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 4px;
+
+}
