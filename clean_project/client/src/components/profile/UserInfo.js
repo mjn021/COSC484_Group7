@@ -51,21 +51,30 @@ function UserInfo(){
 
     
 
-    return(
-        <div>
-            <h2>{curUser.username}</h2>
-            <img src = {curUser.profileUrl} alt = "me" height = {200} width = {200}/>
+    <div class="profile">
+            <h2 >{user.username}</h2>
+
+            
+      
+            <img src = {user.url} alt = "me" height = {200} width = {200}/>
+
+            
+
+            
             <h3>Bio {<button onClick = {onEdit} className = 'edit'>
                 <FaEdit color = 'black' />
             </button>}</h3>
-            {!editBool && <><p>{bio}</p> </>}
+
+        <div class="bio">
+            {!editBool && <><p>{user.bio}</p> </>}
             {editBool && 
                 <>
-                <input onChange = {getTempBio}  type = 'text'></input> <br></br>
-                <button onClick = {changeBio}>Change</button>
-                <button onClick = {onCancel}>Cancel</button>
+                <input onChange = {{}} type = 'text'></input> <br></br>
+                <button onClick = {{}}>Change</button>
+                <button onClick = {{}}>Cancel</button>
                 </>
             }
+            </div>
         </div>
     )
 }
