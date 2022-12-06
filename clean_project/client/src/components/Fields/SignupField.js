@@ -46,13 +46,13 @@ function SignupField(){
     }
     
     return(
-        <div>
-            <h1>Signup</h1>
+        <div className ="signUpBody">
+            <h1 className="sign">Signup</h1>
             <form onSubmit = {onS}>
-                <label>Enter Username: </label><input onChange = {getUsername} name = 'uname' type = 'text' required></input> <br></br>
-                <label>Enter Password: </label><input onChange = {getPassword} name = 'pw1' type = 'password' required></input><br></br>
-                <label>Re-enter Password: </label><input onChange = {getPassword2} name = 'pw2' type = 'password' required></input><br></br>
-                <input type = 'submit'></input> <br></br>
+                <input onChange = {{}} name = 'uname' type = 'text' required placeholder="Enter Username" className="name"></input> <br></br>
+                <input onChange = {{}} name = 'pw1' type = 'password' required placeholder="Enter Password" className="pass"></input><br></br>
+                <input onChange = {{}} name = 'pw2' type = 'password' required placeholder="Re-Enter Password" className="pass2"></input><br></br>
+                <input type = 'submit' value="Sign Up"></input> <br></br>
             </form>
             {isLoggedIn && <p>isLoggedIn</p>}
         </div>
