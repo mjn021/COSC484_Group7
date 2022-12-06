@@ -114,6 +114,36 @@ background-color: rgb(255, 187, 0);
 .pass2{
   margin-bottom: 20px ;
 }
+.loginUser{
+margin-bottom: 20px ;
+}
+.loginPass{
+margin-bottom: 20px ;
+}
+
+.loginLink{
+  color: white;
+  text-decoration: underline;
+}
+
+.loginLink:hover{
+   color: rgb(255, 187, 0);
+}
+
+
+.input{
+   margin-top: 20px;
+  box-sizing: content-box;
+  width: 300px;
+  height: 100px;
+  padding: 70px;
+  padding-bottom: 200px;
+  border: 2px solid rgb(255, 187, 0);
+  margin-left: 350px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 4px;
+
+}
 
 .signUpBody{
   margin-top: 20px;
