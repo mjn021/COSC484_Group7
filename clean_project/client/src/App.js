@@ -22,7 +22,7 @@ function App() {
     routes = (<>
     <Route path ='/signup' element = {<SignUpPage />} />
     <Route path = '/testing' element = {<TestingPage />} />
-    <Route path = '/*' element = {<LogInPage />} /> 
+    <Route path = '/' element = {<LogInPage />} /> 
    
     </>
     )

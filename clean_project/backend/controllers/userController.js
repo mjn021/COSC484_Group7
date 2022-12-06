@@ -20,7 +20,6 @@ const registerUser = asyncHandler(async(req,res) => {
         res.status(400)
         throw new Error('Include all fields')
     }
-    console.log(req.body)
 
     const usernameCheck = await User.findOne({username})
 
@@ -43,7 +42,6 @@ const registerUser = asyncHandler(async(req,res) => {
             username: user.username,
             token: getToken(user._id)
         })
-        console.log(user.username)
         }
         else{
             res.status(400)
@@ -77,14 +75,11 @@ const getMe = asyncHandler(async(req,res) => {
 
 //Edit info of current profile
 const editInfo = asyncHandler(async(req,res) => {
-    console.log(req.body)
     const username = req.body.username
     User.findOneAndUpdate({username}, req.body, (err,res) => {
         if(err) throw err
-        console.log(req.body)
     })
     const user =await User.findOne({username})
-
     res.status(200).json(user)
     
     
@@ -92,16 +87,12 @@ const editInfo = asyncHandler(async(req,res) => {
 
 const getFollowingArray = asyncHandler(async(req,res) => {
     const {id} = req.body
-    console.log(id)
     const user = await User.findById(id)
     const followedArray = []
 
-    console.log('user following length: ' + user.following.length)
-    console.log(user)
     for(var i = 0; i < user.following.length; i++){
         var followedUser = await User.findById(user.following[i])
         if(followedUser){
-            //console.log(followedUser.username)
             followedArray.push(followedUser)
         }
     }
@@ -110,7 +101,6 @@ const getFollowingArray = asyncHandler(async(req,res) => {
 
 const getFollowerArray = asyncHandler(async(req,res) => {
     const {id} = req.body
-    console.log(id)
     const user = await User.findById(id)
     const followedArray = []
 
@@ -179,12 +169,9 @@ const getFollowing =asyncHandler(async(req,res) => {
     const {username} = req.body
     const user = await User.findOne({username})
     const followedArray = []
-    console.log(user.following.length)
-    console.log(user.following)
     for(var i = 0; i < user.following.length; i++){
         var followedUser = await User.findById(user.following[i])
         if(followedUser){
-            //console.log(followedUser.username)
             followedArray.push(followedUser)
         }
     }
@@ -212,13 +199,11 @@ const addFollow = async (req,res)=> {
             if(!user.follower.includes(idMe)){
                 await user.updateOne({$push:{follower:idMe}});
                 await currentUser.updateOne({$push:{following:id}});
-                console.log('success')
                 res.status(200).json("success");
 
             }
         }catch(err){
             res.status(500).json({'message': 'error in addFollow'})
-            console.log('error')
         }
 }
 
@@ -229,7 +214,7 @@ const getPosts = asyncHandler(async(req,res) => {
     const {username} = req.body
     console.log({username})
     const user = await User.findOne({username})
-    //console.log(posts)
+
     res.status(200).json(user.posts)
 })
 
@@ -244,7 +229,9 @@ const getPosts = asyncHandler(async(req,res) => {
 const getUsers = asyncHandler(async(req,res) => {
     const users = await User.find()
     if(users){
-    res.status(200).json(users)}
+        console.log(users)
+    res.status(201).json(users)}
+
     else{
         res.status(404).json({'message': 'cannot find users'})
     }
@@ -261,7 +248,7 @@ const getUsers = asyncHandler(async(req,res) => {
 ///api/users/login
 const loginUser = asyncHandler(async(req,res) => {
     const {username, password} = req.body
-
+    console.log(req.body)
     const user = await User.findOne({username})
 
     

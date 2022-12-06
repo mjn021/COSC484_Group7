@@ -21,11 +21,12 @@ if(process.env.NODE_ENV ==='production'){
     console.log('we in the if bitch')
     app.use(express.static(path.join(__dirname,'../client/build')))
     app.get('*', (_,res)=> res.sendFile(path.join(__dirname,'../client/build/index.html')))
+    console.log('this shit has been started I believe')
 } 
 else{
     app.get('/', (_,res) => {
         console.log('we in the else bitch')
-        res.status(200).send({message: 'Welcome to port 5001'})
+        res.status(200).send({message: `Welcome to ${PORT}`})
     })
 }
 

@@ -17,7 +17,7 @@ export const UserProvider = ({children}) => {
     const auth = useContext(AuthContext)
 
     const registerUser = async (newUser) => {
-        const response = await fetch('/users/', {
+        const response = await fetch('/api/users/', {
             method: 'POST',
             headers: {
             'Content-Type' : 'application/json'
@@ -46,7 +46,7 @@ export const UserProvider = ({children}) => {
     }*/
     //maybe pass whole ass thing? not just id?
      const loginUser = async(userInfo) => {
-        const response = await fetch('/users/login', {
+        const response = await fetch('/api/users/login', {
             method: 'POST',
             headers: {
             'Content-Type' : 'application/json'
@@ -85,7 +85,7 @@ export const UserProvider = ({children}) => {
     //info is {username: ..., bio: ...}
     const editData = async(info) => {
 
-        const response = await fetch('/users/me', {
+        const response = await fetch('/api/users/me', {
             method: 'PUT',
             headers: {
             'Content-Type' : 'application/json'
@@ -100,7 +100,7 @@ export const UserProvider = ({children}) => {
         
     }
     const getUserList = async() => {
-        const response = await fetch('/users/userlist', {
+        const response = await fetch('/api/users/userlist', {
             method: 'GET',
             headers: {
                 'Content-Type' : 'application/json'
@@ -113,7 +113,7 @@ export const UserProvider = ({children}) => {
     }
 
     const getFollowing = async(id) => {
-        const response = await fetch('/users/me/following/users', {
+        const response = await fetch('/api/users/me/following/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -128,7 +128,7 @@ export const UserProvider = ({children}) => {
     }
     //info is {username: ..., post: ...}
     const addPost = async(info) => {
-        const response = await fetch('/users/me/posts', {
+        const response = await fetch('/api/users/me/posts', {
             method: 'POST',
             headers: {
             'Content-Type' : 'application/json'
@@ -140,7 +140,7 @@ export const UserProvider = ({children}) => {
         setCurUser(data)
     }
     const getCurrentUser = async(_id) => {
-        const response = await fetch('/users/me', {
+        const response = await fetch('/api/users/me', {
             method: 'GET',
             headers: {
                 'Content-Type' : 'application/json'
@@ -161,7 +161,7 @@ export const UserProvider = ({children}) => {
     
 
     const getTargetUser = async(id) => {
-        const response = await fetch('/users/user', {
+        const response = await fetch('/api/users/user', {
             method: 'POST',
             headers: {
             'Content-Type' : 'application/json'
@@ -176,7 +176,7 @@ export const UserProvider = ({children}) => {
     }
     //two userids
     const addFollowing = async(info) => {
-        const response = await fetch('/users/me/following', {
+        const response = await fetch('/api/users/me/following', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'

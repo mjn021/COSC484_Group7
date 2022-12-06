@@ -50,7 +50,7 @@ export const Auth = () =>  {
       }
       //just get whole ass user from the get
       const getCurrentUser = async(id) => {
-        const response = await fetch('/users/me', {
+        const response = await fetch('/api/users/me', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
